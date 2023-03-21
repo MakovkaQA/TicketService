@@ -2,6 +2,7 @@ package ru.netology.TicketManager;
 
 import ru.netology.Repository.Repository;
 import ru.netology.Repository.Ticket;
+import ru.netology.Repository.TicketByTravelTimeComparator;
 
 import java.util.Arrays;
 
@@ -12,7 +13,7 @@ public class TicketManager {
         this.repo = repo;
     }
 
-    public Ticket[] findAll(String from, String to) {
+    public Ticket[] findAll(String from, String to, TicketByTravelTimeComparator comparator) {
         Ticket[] result = new Ticket[0];
         for (Ticket ticket : repo.getTickets()) {
             if (matches(ticket, from, to)) {
@@ -24,7 +25,7 @@ public class TicketManager {
                 result = tmp;
             }
         }
-        Arrays.sort(result);
+        Arrays.sort(result, comparator);
         return result;
     }
 
