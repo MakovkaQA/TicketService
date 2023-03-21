@@ -39,7 +39,16 @@ public class TicketManagerTest {
     }
 
     @Test
-    public void findSortedTickets() {
+    public void findSortedTicketsByPrice() {
+
+        Ticket[] expected = {ticket6, ticket2, ticket1, ticket8, ticket4};
+        Ticket[] actual = manager.findAll("SVO", "IKT");
+
+        Assertions.assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    public void findSortedTicketsByTravelTime() {
 
         Ticket[] expected = {ticket4, ticket6, ticket1, ticket2, ticket8};
         Ticket[] actual = manager.findAll("SVO", "IKT", comparator);
