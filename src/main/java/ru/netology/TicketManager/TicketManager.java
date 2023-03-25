@@ -4,6 +4,7 @@ import ru.netology.Repository.Repository;
 import ru.netology.Repository.Ticket;
 import ru.netology.Repository.TicketByTravelTimeComparator;
 
+
 import java.util.Arrays;
 
 public class TicketManager {
@@ -25,8 +26,12 @@ public class TicketManager {
                 result = tmp;
             }
         }
-        Arrays.sort(result);
-        return result;
+        if (result.length > 0) {
+            Arrays.sort(result);
+            return result;
+        } else {
+            throw new NotFoundException("Ticket from: " + from + " to " + to + " not found");
+        }
     }
 
     public boolean matches(Ticket ticket, String from, String to) {
@@ -49,8 +54,12 @@ public class TicketManager {
                 result = tmp;
             }
         }
-        Arrays.sort(result, comparator);
-        return result;
+        if (result.length > 0) {
+            Arrays.sort(result, comparator);
+            return result;
+        } else {
+            throw new NotFoundException("Ticket from: " + from + " to " + to + " not found");
+        }
     }
 
 }
