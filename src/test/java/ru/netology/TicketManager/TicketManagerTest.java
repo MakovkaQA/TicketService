@@ -59,9 +59,10 @@ public class TicketManagerTest {
     @Test
     public void notFoundTicketsSortedByPrice() {
 
-        Assertions.assertThrows(NotFoundException.class, () -> {
-            manager.findAll("OVB", "SVX");
-        });
+        Ticket[] expected = {};
+        Ticket[] actual = manager.findAll("OVB", "SVX");
+
+        Assertions.assertArrayEquals(expected, actual);
     }
 
     @Test
@@ -85,9 +86,10 @@ public class TicketManagerTest {
     @Test
     public void notFoundTicketsSortedByTravelTime() {
 
-        Assertions.assertThrows(NotFoundException.class, () -> {
-            manager.findAll("KGD", "DME", comparator);
-        });
+        Ticket[] expected = {};
+        Ticket[] actual = manager.findAll("KGD", "DME", comparator);
+
+        Assertions.assertArrayEquals(expected, actual);
     }
 
 }

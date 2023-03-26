@@ -26,40 +26,32 @@ public class TicketManager {
 <span class="fc" id="L26">                result = tmp;</span>
             }
         }
-<span class="fc bfc" id="L29" title="All 2 branches covered.">        if (result.length &gt; 0) {</span>
-<span class="fc" id="L30">            Arrays.sort(result);</span>
-<span class="fc" id="L31">            return result;</span>
-        } else {
-<span class="fc" id="L33">            throw new NotFoundException(&quot;Ticket from: &quot; + from + &quot; to &quot; + to + &quot; not found&quot;);</span>
-        }
+<span class="fc" id="L29">        Arrays.sort(result);</span>
+<span class="fc" id="L30">        return result;</span>
     }
 
     public boolean matches(Ticket ticket, String from, String to) {
-<span class="fc bfc" id="L38" title="All 4 branches covered.">        if (ticket.getFrom().contains(from) &amp;&amp; ticket.getTo().contains(to)) {</span>
-<span class="fc" id="L39">            return true;</span>
+<span class="fc bfc" id="L34" title="All 4 branches covered.">        if (ticket.getFrom().contains(from) &amp;&amp; ticket.getTo().contains(to)) {</span>
+<span class="fc" id="L35">            return true;</span>
         } else {
-<span class="fc" id="L41">            return false;</span>
+<span class="fc" id="L37">            return false;</span>
         }
     }
 
     public Ticket[] findAll(String from, String to, TicketByTravelTimeComparator comparator) {
-<span class="fc" id="L46">        Ticket[] result = new Ticket[0];</span>
-<span class="fc bfc" id="L47" title="All 2 branches covered.">        for (Ticket ticket : repo.getTickets()) {</span>
-<span class="fc bfc" id="L48" title="All 2 branches covered.">            if (matches(ticket, from, to)) {</span>
-<span class="fc" id="L49">                Ticket[] tmp = new Ticket[result.length + 1];</span>
-<span class="fc bfc" id="L50" title="All 2 branches covered.">                for (int i = 0; i &lt; result.length; i++) {</span>
-<span class="fc" id="L51">                    tmp[i] = result[i];</span>
+<span class="fc" id="L42">        Ticket[] result = new Ticket[0];</span>
+<span class="fc bfc" id="L43" title="All 2 branches covered.">        for (Ticket ticket : repo.getTickets()) {</span>
+<span class="fc bfc" id="L44" title="All 2 branches covered.">            if (matches(ticket, from, to)) {</span>
+<span class="fc" id="L45">                Ticket[] tmp = new Ticket[result.length + 1];</span>
+<span class="fc bfc" id="L46" title="All 2 branches covered.">                for (int i = 0; i &lt; result.length; i++) {</span>
+<span class="fc" id="L47">                    tmp[i] = result[i];</span>
                 }
-<span class="fc" id="L53">                tmp[tmp.length - 1] = ticket;</span>
-<span class="fc" id="L54">                result = tmp;</span>
+<span class="fc" id="L49">                tmp[tmp.length - 1] = ticket;</span>
+<span class="fc" id="L50">                result = tmp;</span>
             }
         }
-<span class="fc bfc" id="L57" title="All 2 branches covered.">        if (result.length &gt; 0) {</span>
-<span class="fc" id="L58">            Arrays.sort(result, comparator);</span>
-<span class="fc" id="L59">            return result;</span>
-        } else {
-<span class="fc" id="L61">            throw new NotFoundException(&quot;Ticket from: &quot; + from + &quot; to &quot; + to + &quot; not found&quot;);</span>
-        }
+<span class="fc" id="L53">        Arrays.sort(result, comparator);</span>
+<span class="fc" id="L54">        return result;</span>
     }
 
 }

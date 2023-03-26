@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: ru.netology.TicketManager.TicketManagerTest
 -------------------------------------------------------------------------------
-Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.028 s - in ru.netology.TicketManager.TicketManagerTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s - in ru.netology.TicketManager.TicketManagerTest

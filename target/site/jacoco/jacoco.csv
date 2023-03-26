@@ -2,5 +2,4 @@ GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_
 TicketService,ru.netology.Repository,Repository,0,83,0,6,0,17,0,7,0,4
 TicketService,ru.netology.Repository,TicketByTravelTimeComparator,0,9,0,0,0,2,0,2,0,2
 TicketService,ru.netology.Repository,Ticket,23,46,0,4,11,16,6,8,6,6
-TicketService,ru.netology.TicketManager,NotFoundException,0,4,0,0,0,2,0,1,0,1
-TicketService,ru.netology.TicketManager,TicketManager,0,161,0,20,0,30,0,14,0,4
+TicketService,ru.netology.TicketManager,TicketManager,0,141,0,16,0,26,0,12,0,4
